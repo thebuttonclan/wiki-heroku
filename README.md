@@ -1,4 +1,26 @@
-# Heroku Deploy for Wiki.js
+# Buttonbase Initial Deployment
+
+<!-- https://github.com/Requarks/wiki-heroku/issues/22 -->
+
+Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
+
+```
+heroku login
+heroku git:remote -a buttonbase
+heroku stack:set container
+```
+
+In the Heroku dashboard: `Resources > Add-Ons`, add the Heroku Postgres add-on, then:
+
+```
+git push heroku 2.x:main
+```
+
+This deploys the `2.x` branch to Heroku by renaming it to `main` on the remote. The branch rename to `main` is necessary for Heroku to automatically deploy.
+
+Below follows the original Requarks/wiki-heroku README:
+
+## Heroku Deploy for Wiki.js
 
 This repo is an Heroku app definition for Wiki.js.  
 For information about Wiki.js, check out the following links:
